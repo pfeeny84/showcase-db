@@ -1,19 +1,22 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 // Create your User Model
-const factSchema = new mongoose.Schema({
-    text: String
-  }, {
-    timestamps: true
-  });
+// const showcaseSchema = new mongoose.Schema({
+//     text: String
+//   }, {
+//     timestamps: true
+//   });
 
 
 const userSchema = new mongoose.Schema({
     name: String,
     email: String,
-    cohort: String,
     avatar: String,
-    facts: [factSchema],
+    showcase: {
+        type: Schema.Types.ObjectId,
+        ref: 'Showcase'
+    },
     googleId: String
   }, {
     timestamps: true

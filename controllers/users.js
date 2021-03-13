@@ -2,10 +2,10 @@ const User = require('../models/user');
 
 module.exports = {
   index,
-  addFact
+  addShowcase
 };
 
-function addFact(req, res){
+function addShowcase(req, res){
     console.log(req.user, ' req.user');
   
     // req.user is the mongoose document of our logged in user
