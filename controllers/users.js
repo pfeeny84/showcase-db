@@ -9,10 +9,10 @@ function addShowcase(req, res){
     console.log(req.user, ' req.user');
   
     // req.user is the mongoose document of our logged in user
-    req.user.facts.push(req.body);
+    req.user.showcases.push(req.body);
     // if mutate a document we have to save it
     req.user.save(function(err) {
-      res.redirect('/users')
+      res.redirect('/showcases')
     })
   }
 
