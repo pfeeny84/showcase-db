@@ -1,43 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/style.css" />
-  <title>SHOWCASE-Db</title>
-</head>
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a href="" class="navbar-brand">SHOWCASE-Db</a> 
-            
-            <ul class="nav navbar-nav">
-              <li>
-                <% if (user) { %>
-                  <a href="/logout"><i class="active"></i>Log Out</a>
-                <% } else { %>
-                  <a href="/auth/google"><i class="active"></i>Login with Google</a>
-                <% } %>
-              
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <a href="/users/new">Add Show</a>
-      <h1>Showcases</h1>
+<%- include('../partials/header') %>
 
 
-
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>   
-</body>
-</html>
+<%- include('../partials/footer') %>
