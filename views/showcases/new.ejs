@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<a class="active" href="/showcases">All Showcases</a>
+<% if (user._id.equals(user && user._id)) { %>
+<div>
+<form id="new-form" action="/showcases" method="POST">
+  <label>HEADLINER:</label>
+  <input type="text" name="headliner">
+  <label>TOUR:</label>
+  <input type="text" name="tour">
+  <label>OPENING ACTS:</label>
+  <input type="text" name="openingActs">
+  <label>VENUE:</label>
+  <input type="text" name="venue">
+  <label>DATE:</label>
+  <input type="date" name="date">
+  <input type="submit" value="Add Showcase">
+</form>
+</div>
+<% } %>
+
+<%- include('../partials/footer') %>

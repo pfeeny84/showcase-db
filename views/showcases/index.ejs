@@ -1,4 +1,25 @@
 <%- include('../partials/header') %>
-
+<a class="active" href="/showcases/new">Add Showcase</a>
+<h1>SHOWCASES</h1>
+<table id="list">
+  <thead>
+    <tr>
+      <th>HEADLINER</th>
+      <th>VENUE</th>
+      <th>DATE</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% showcases.forEach(function(s) { %>
+      <tr>
+        <td><%= s.headliner %></td>
+        <td><%= s.venue %></td>
+        <td><%= s.date %></td>
+        <td><a href="/showcases/<%= s._id %>">DETAILS</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
 
 <%- include('../partials/footer') %>
