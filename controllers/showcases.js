@@ -3,7 +3,8 @@ const Showcase = require('../models/showcase')
 module.exports = {
     index,
     newShowcase,
-    create
+    create,
+    showcaseDetail
 }
 
 function index(req, res) {
@@ -32,3 +33,12 @@ function create(req, res){
             
         })
 }
+
+function showcaseDetail(req, res){
+    Showcase.findById(req.params.id, function(err, showcase){
+        
+        console.log(showcase);
+        res.render('showcases/detail', {showcase: showcase})
+    });
+};  
+
