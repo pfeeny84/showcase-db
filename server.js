@@ -53,7 +53,7 @@ app.use(function (req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
 app.use('/', usersRoutes);
-app.use('/', showcasesRoutes);
+app.use('/showcases', showcasesRoutes);
 
 // invalid request, send 404 page
 app.use(function(req, res) {

@@ -4,7 +4,7 @@
 <div><strong>HEADLINER: </strong><%= user.showcases.headliner %></div>
 
 <h4>Delete</h4>
-<form action = "/showcases/<%= user.showcases._id %>?_method=DELETE" class = "delete-form" method = "POST">
+<form action = "/showcases<%= user.showcases._id %>?_method=DELETE" class = "delete-form" method = "POST">
 <button type="submit">X</button>
 </form>
 <%- include('../partials/footer') %>

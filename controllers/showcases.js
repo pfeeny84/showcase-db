@@ -1,4 +1,4 @@
-const Showcase = require('../models/showcase')
+const Showcase = require('../models/user')
 
 module.exports = {
     index,
