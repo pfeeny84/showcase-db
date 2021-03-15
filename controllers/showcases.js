@@ -4,12 +4,21 @@ module.exports = {
     index,
     newShowcase,
     create,
-    showcaseDetail
+    showcaseDetail,
+    delete: deleteShowcase,
+    
+    
 }
+function deleteShowcase(req,res) {
+    Showcase.findByIdAndDelete(req.params.id, function(){
+        res.redirect('/showcases');
 
+    });
+    
+}
 function index(req, res) {
     Showcase.find({}, function(err, showcases){
-        res.render('showcases/index', {title: 'All Showcases', showcases})
+        res.render('showcases/index', {title: 'My Showcases', showcases})
 
     });
 };
@@ -27,7 +36,7 @@ function create(req, res){
             return res.render("showcases/new");
         }   
         else {
-            console.log('this is a place')
+            // console.log('this is a place')
             res.redirect("/showcases");
         }
             
@@ -36,7 +45,7 @@ function create(req, res){
 
 function showcaseDetail(req, res){
     Showcase.findById(req.params.id, function(err, showcase){
-        
+        console.log(req.params.id);
         console.log(showcase);
         res.render('showcases/detail', {showcase: showcase})
     });
