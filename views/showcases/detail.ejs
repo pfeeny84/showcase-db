@@ -14,7 +14,6 @@
 <br><br><h2>COMMENTS</h2>
 <form id="add-comment-form" method="POST"
    action="/showcases/<%= showcase._id %>/comments">
-   <label>Comment:</label>
    <textarea name="content"></textarea>
    <input type="submit" value="Add Comment">
 </form>
@@ -23,13 +22,20 @@
     <table>
       <thead>
         <tr>
-          <th>Comment</th>
+          <th>COMMENTS:</th>
         </tr>
       </thead>
       <tbody>
-        <% showcase.comments.forEach(function(c) { %>
+        <% showcase.comments.forEach(function(comment) { %>
           <tr>
-            <td><%= c.content %></td>
+            <td><%= comment.content %></td>
+            <td>
+                <% if (showcase.user.equals(user._id)) { %>
+                <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                  <button type="submit">X</button>
+                </form>
+                <% } %>
+            </td>
           </tr>
         <% }); %>
         
