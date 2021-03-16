@@ -76,3 +76,25 @@
 //     </div>
 //   </div> --></div>
 // <!-- <input type="hidden" name="user_id" value="<%= user._id %>"> -->
+
+// function addShowcase(req, res){
+//     console.log(req.user, ' req.user');
+  
+//     // req.user is the mongoose document of our logged in user
+//     showcases.push(req.body);
+//     // if mutate a document we have to save it
+//     save(function(err) {
+//       res.redirect('/showcases')
+//     })
+//   }
+
+
+
+// router.post('/', isLoggedIn, showcasesCtrl.addShowcase);
+
+// custom authorization middleware function
+// function isLoggedIn(req, res, next){
+//     if(req.isAuthenticated()) return next();
+//     // req.isAuthenticated function is given to us by passport
+//     res.redirect('/auth/google')
+// }

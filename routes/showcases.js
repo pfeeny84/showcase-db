@@ -8,7 +8,7 @@ router.get('/new', showcasesCtrl.newShowcase);
 router.post('/new', showcasesCtrl.create);
 router.get('/:id', showcasesCtrl.showcaseDetail);
 router.delete('/:id', showcasesCtrl.delete);
-// router.post('/', isLoggedIn, showcasesCtrl.addShowcase);
+
 
 // custom authorization middleware function
 function isLoggedIn(req, res, next){
