@@ -18,9 +18,10 @@ require('./config/database');
 // configure Passport
 require('./config/passport');
 
-let indexRoutes = require('./routes/index');
-let usersRoutes = require('./routes/users');
-let showcasesRoutes =require('./routes/showcases');
+const indexRoutes = require('./routes/index');
+const usersRoutes = require('./routes/users');
+const showcasesRoutes =require('./routes/showcases');
+const commentsRoutes = require('./routes/comments');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -54,7 +55,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRoutes);
 app.use('/', usersRoutes);
 app.use('/showcases', showcasesRoutes);
-// app.use('/', commentsRoutes);
+app.use('/', commentsRoutes);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
