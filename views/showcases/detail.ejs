@@ -6,9 +6,17 @@
 <div><strong>OPENING ACTS: </strong><%= showcase.openingActs %></div>
 <div><strong>VENUE: </strong><%= showcase.venue %></div>
 <div><strong>DATE: </strong><%= showcase.date %></div>
-
 <h4>Delete Showcase</h4>
 <form action = "/showcases/<%= showcase._id %>?_method=DELETE" class = "delete-form" method = "POST">
 <button type="submit">X</button>
 </form>
+
+<br><br><h2>COMMENTS</h2>
+<form id="add-comment-form" method="POST"
+   action="/showcases/<%= showcase._id %>/comments">
+   <label>Comment:</label>
+   <textarea name="content"></textarea>
+   <input type="submit" value="Add Comment">
+</form>
+
 <%- include('../partials/footer') %>

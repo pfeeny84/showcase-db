@@ -54,6 +54,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRoutes);
 app.use('/', usersRoutes);
 app.use('/showcases', showcasesRoutes);
+// app.use('/', commentsRoutes);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
