@@ -4,7 +4,7 @@ const user = require('../models/user');
 
 // GET /students
 router.get('/users', usersCtrl.index);
-router.post('/showcases', isLoggedIn, usersCtrl.addShowcase);
+
 
 // custom authorization middleware function
 function isLoggedIn(req, res, next){

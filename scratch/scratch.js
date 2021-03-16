@@ -75,3 +75,4 @@
 //       </div>
 //     </div>
 //   </div> --></div>
+// <!-- <input type="hidden" name="user_id" value="<%= user._id %>"> -->

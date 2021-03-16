@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const user = require('./user');
 const Schema = mongoose.Schema;
 
 const showcaseSchema = new mongoose.Schema({
@@ -13,13 +14,22 @@ const showcaseSchema = new mongoose.Schema({
     openingActs: String,
     venue: String,
     date: Date,
+    
+
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    
 
 
-    comment: {
+    comment: [{
         type: Schema.Types.ObjectId,
         ref: 'Comment'
-    },
-  }, {
+    }],
+  }, 
+  
+  {
     timestamps: true
   });
 
