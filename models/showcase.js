@@ -2,7 +2,14 @@ const mongoose = require('mongoose');
 const user = require('./user');
 const Schema = mongoose.Schema;
 
-const showcaseSchema = new mongoose.Schema({
+const commentSchema = new Schema({
+    content: String,
+    
+}, {
+    timestamps: true
+  });
+
+  const showcaseSchema = new mongoose.Schema({
     text: String,
 
     headliner:{
@@ -21,12 +28,7 @@ const showcaseSchema = new mongoose.Schema({
         ref: 'User'
     },
     
-
-
-    comment: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Comment'
-    }],
+    comment: [commentSchema],
   }, 
   
   {
