@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 const user = require('./user');
 const Schema = mongoose.Schema;
 
-const commentSchema = new Schema({
+const commentSchema = new mongoose.Schema({
     content: String,
+    
     
 }, {
     timestamps: true
@@ -28,7 +29,7 @@ const commentSchema = new Schema({
         ref: 'User'
     },
     
-    comment: [commentSchema],
+    comments: [commentSchema],
   }, 
   
   {

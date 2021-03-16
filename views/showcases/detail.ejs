@@ -19,4 +19,24 @@
    <input type="submit" value="Add Comment">
 </form>
 
+<% if (showcase.comments.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% showcase.comments.forEach(function(c) { %>
+          <tr>
+            <td><%= c.content %></td>
+          </tr>
+        <% }); %>
+        
+      </tbody>
+    </table>
+  <% } else { %>
+    <h6>No Comments Yet</h6>
+  <% } %>
+
 <%- include('../partials/footer') %>

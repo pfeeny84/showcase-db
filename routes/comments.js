@@ -1,5 +1,4 @@
-const express = require('express');
-const router = express.Router();
+let router = require('express').Router();
 const commentsCtrl = require('../controllers/comments');
 
 router.post('/showcases/:id/comments', commentsCtrl.create);
