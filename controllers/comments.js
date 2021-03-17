@@ -13,6 +13,7 @@ const Showcase = require('../models/showcase');
         // console.log(showcase,'this is showcase')
         // req.body.user = req.user._id;
         // console.log(req.body, 'this is req.body');
+        req.body.user = req.user._id;
         showcase.comments.push(req.body);
         showcase.save(function(err) {
         res.redirect(`/showcases/${showcase._id}`);
@@ -37,9 +38,12 @@ function update(req, res) {
       
       const commentSubdoc = showcase.comments.id(req.params.id);
       // Ensure that the comment was created by the logged in user
-    //   if (!commentSubdoc.user.equals(req.user._id)) return res.redirect(`/showcases/${showcase._id}`);
+      console.log(commentSubdoc.user)
+      if (!commentSubdoc.user.equals(req.user._id)) return res.redirect(`/showcases/${showcase._id}`);
+    
       // Update the text of the comment
-      commentSubdoc.text = req.body.text;
+      commentSubdoc.content = req.body.text;
+      console.log(commentSubdoc);
       // Save the updated book
       showcase.save(function(err) {
         // Redirect back to the book's show view
