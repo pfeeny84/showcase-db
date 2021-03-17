@@ -20,19 +20,11 @@ const Showcase = require('../models/showcase');
 }
 
 function deleteComment(req, res) {
-    // Note the cool "dot" syntax to query on the property of a subdoc
-    Showcase.findOne({'comments._id': req.params.id}, function(err, showcase) {
-      // Find the comment subdoc using the id method on Mongoose arrays
-     
-      const commentSubdoc = showcase.comments.id(req.params.id);
-      // Ensure that the comment was created by the logged in user
-    //   if (!commentSubdoc.user.equals(req.user._id)) return res.redirect(`/showcases/${showcase._id}`);
-      // Remove the comment using the remove method of the subdoc
-      commentSubdoc.remove();
-      // Save the updated book
-      showcase.save(function(err) {
-        // Redirect back to the book's show view
-        res.redirect(`/showcases/${showcase._id}`);
-      });
+   Showcase.findOne({'comments._id': req.params.id}, function(err, showcase) {
+        const commentSubdoc = showcase.comments.id(req.params.id);
+        commentSubdoc.remove();
+        showcase.save(function(err) {
+            res.redirect(`/showcases/${showcase._id}`);
+        });
     });
-  }
+}
