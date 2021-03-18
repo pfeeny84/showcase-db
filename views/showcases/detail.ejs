@@ -6,7 +6,7 @@
     <div><span class=detail><strong>TOUR: </strong></span><%= showcase.tour %></div>
     <div><span class=detail><strong>OPENING ACTS: </strong></span><%= showcase.openingActs %></div>
     <div><span class=detail ><strong>VENUE: </strong></span><%= showcase.venue %></div>
-    <div><span class=detail><strong>DATE: </strong></span><%= showcase.date %></div>
+    <div><span class=detail><strong>DATE: </strong></span><%= showcase.date.toDateString() %></div>
     <h4 id="delete-head">Delete Showcase</h4>
     <form action = "/showcases/<%= showcase._id %>?_method=DELETE" class = "delete-form" method = "POST">
     <button class="x-button" type="submit">X</button>
