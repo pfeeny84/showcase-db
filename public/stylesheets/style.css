@@ -5,12 +5,13 @@ body {
   grid-template-rows: 50px 1fr;
   grid-template-areas: 
     "nav"
-    "main"
+    "main";
+
 }
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: rgb(144, 7, 7);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -55,4 +56,28 @@ table thead th {
 table td {
   padding: 10px;
   text-align: center;
+}
+
+#bg-image {
+  width: 90%;
+  min-height: 40em;
+  margin: auto;
+  padding: 10px;
+  border: solid 6px #000;
+  border-radius: 50%;
+  box-shadow: 12px 12px 7px;
+  background-size: cover;
+ background-repeat: no-repeat;
+ background-color: darkred;
+}
+
+#landing-text {
+  text-align:center;
+  font-family: "Permanent Marker";
+  color:darkred;
+  border: solid 3px black;
+  width: auto;
+  padding:3px;
+  background-color: rgb(222, 194, 194);
+
 }

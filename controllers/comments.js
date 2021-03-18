@@ -8,11 +8,8 @@ const Showcase = require('../models/showcase');
  };
 
  function create(req, res) {
-    //  console.log('button clicked')
+    
      Showcase.findById(req.params.id, function(err, showcase) {
-        // console.log(showcase,'this is showcase')
-        // req.body.user = req.user._id;
-        // console.log(req.body, 'this is req.body');
         req.body.user = req.user._id;
         showcase.comments.push(req.body);
         showcase.save(function(err) {
@@ -38,7 +35,7 @@ function update(req, res) {
       
       const commentSubdoc = showcase.comments.id(req.params.id);
       // Ensure that the comment was created by the logged in user
-      console.log(commentSubdoc.user)
+      
       if (!commentSubdoc.user.equals(req.user._id)) return res.redirect(`/showcases/${showcase._id}`);
     
       // Update the text of the comment
