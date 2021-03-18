@@ -7,6 +7,7 @@ Showcase db is a user based web app that lets you track and organize data about 
 - Javascript, HTML, CSS
 - Node.js, Express.js
 - Mongo-db, Mongoose.
+- Heroku
 ### Getting Started
 - [Log in and Build a Showcase!](https://showcase-db.herokuapp.com)
 - [Trello Board](https://trello.com/b/bFHd7chM/showcase-db)
