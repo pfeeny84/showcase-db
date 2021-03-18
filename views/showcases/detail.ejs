@@ -1,52 +1,53 @@
 <%- include('../partials/header') %>
 <a class="active" href="/showcases">All Showcases</a>
-<h1>SHOWCASE DETAILS</h1>
-<div><strong>HEADLINER: </strong><%= showcase.headliner %></div>
-<div><strong>TOUR: </strong><%= showcase.tour %></div>
-<div><strong>OPENING ACTS: </strong><%= showcase.openingActs %></div>
-<div><strong>VENUE: </strong><%= showcase.venue %></div>
-<div><strong>DATE: </strong><%= showcase.date %></div>
-<h4>Delete Showcase</h4>
-<form action = "/showcases/<%= showcase._id %>?_method=DELETE" class = "delete-form" method = "POST">
-<button type="submit">X</button>
-</form>
+<div id="details">
+    <h1>SHOWCASE DETAILS</h1>
+    <div><span class=detail><strong>HEADLINER: </strong></span><%= showcase.headliner %></div>
+    <div><span class=detail><strong>TOUR: </strong></span><%= showcase.tour %></div>
+    <div><span class=detail><strong>OPENING ACTS: </strong></span><%= showcase.openingActs %></div>
+    <div><span class=detail ><strong>VENUE: </strong></span><%= showcase.venue %></div>
+    <div><span class=detail><strong>DATE: </strong></span><%= showcase.date %></div>
+    <h4>Delete Showcase</h4>
+    <form action = "/showcases/<%= showcase._id %>?_method=DELETE" class = "delete-form" method = "POST">
+    <button type="submit">X</button>
+    </form>
 
-<br><br>
-<form id="add-comment-form" method="POST"
-   action="/showcases/<%= showcase._id %>/comments">
-   <textarea name="content"></textarea>
-   <input type="submit" value="Add Comment">
-</form>
+    <br><br>
+    <form id="add-comment-form" method="POST"
+    action="/showcases/<%= showcase._id %>/comments">
+    <textarea name="content"></textarea>
+    <input type="submit" value="Add Comment">
+    </form>
 
-<% if (showcase.comments.length) { %>
-    <table>
-      <thead>
-        <tr>
-          <th>COMMENTS:</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% showcase.comments.forEach(function(comment) { %>
-          <tr>
-            <td><%= comment.content %></td>
-            <td>
-                <% if (showcase.user.equals(user._id)) { %>
-                <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                  <button type="submit">X</button>
-                </form>
-                <form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
-                    <input name="text" value="<%= comment.text %>">
-                    <button type="submit">UPDATE COMMENT</button>
-                  </form>
-            <% } %>
-            </td>
-          </tr>
-        <% }); %>
-        
-      </tbody>
-    </table>
-  <% } else { %>
-    <h6>No Comments Yet</h6>
-  <% } %>
-
+    <% if (showcase.comments.length) { %>
+        <table>
+        <thead>
+            <tr>
+            <th>COMMENTS:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% showcase.comments.forEach(function(comment) { %>
+            <tr>
+                <td><%= comment.content %></td>
+                <td>
+                    <% if (showcase.user.equals(user._id)) { %>
+                    <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                    <button id="delete" type="submit">X</button>
+                    </form>
+                    <form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
+                        <input name="text" value="<%= comment.text %>">
+                        <button id="update" type="submit">UPDATE</button>
+                    </form>
+                <% } %>
+                </td>
+            </tr>
+            <% }); %>
+            
+        </tbody>
+        </table>
+    <% } else { %>
+        <h6>No Comments Yet</h6>
+    <% } %>
+</div>
 <%- include('../partials/footer') %>

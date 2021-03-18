@@ -84,12 +84,50 @@ table td {
 }
 
 .navbar{
-  background-color: rgba(142, 51, 51, 0.834);
+  background-color: rgba(205, 178, 178, 0.834);
 }
 
 .navbar-brand{
   font-family: "Permanent Marker";
-  color:rgba(0, 0, 0, 0);
+  color:rgb(0, 0, 0);
   font-size: 3em
+}
+#show-logo{
+  font-family: "Permanent Marker";
+  text-align: center;
+}
+
+#list-head{
+  font-family: "Permanent Marker";
+}
+
+#list-body{
+  font-family: "Permanent Marker";
+}
+
+#details{
+  font-family: "Permanent Marker";
+  text-align: center;
+}
+
+.active{
+  font-family: "Permanent Marker";
+  text-align: center;
+ 
+}
+
+#new-showcase{
+  font-family: "Permanent Marker";
+  margin: auto;
+  padding:8px
+}
+
+#delete{
+  display: block;
+  
+}
+
+.detail{
+  color: darkred;
 }
 

@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 <a class="active" href="/showcases/new">Add Showcase</a>
-<h1>SHOWCASES</h1>
+<h1 id= "show-logo">SHOWCASES</h1>
 <table id="list">
-  <thead>
+  <thead id="list-head">
     <tr>
       <th>HEADLINER</th>
       <th>VENUE</th>
@@ -10,7 +10,7 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="list-body">
     <% showcases.forEach(function(s) { %>
       <tr>
         <td><%= s.headliner %></td>
