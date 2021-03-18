@@ -1,22 +1,22 @@
 <%- include('../partials/header') %>
 <a class="active" href="/showcases">All Showcases</a>
 <div id="details">
-    <h1>SHOWCASE DETAILS</h1>
+    <h1 id="details-head">SHOWCASE DETAILS</h1>
     <div><span class=detail><strong>HEADLINER: </strong></span><%= showcase.headliner %></div>
     <div><span class=detail><strong>TOUR: </strong></span><%= showcase.tour %></div>
     <div><span class=detail><strong>OPENING ACTS: </strong></span><%= showcase.openingActs %></div>
     <div><span class=detail ><strong>VENUE: </strong></span><%= showcase.venue %></div>
     <div><span class=detail><strong>DATE: </strong></span><%= showcase.date %></div>
-    <h4>Delete Showcase</h4>
+    <h4 id="delete-head">Delete Showcase</h4>
     <form action = "/showcases/<%= showcase._id %>?_method=DELETE" class = "delete-form" method = "POST">
-    <button type="submit">X</button>
+    <button class="x-button" type="submit">X</button>
     </form>
 
     <br><br>
     <form id="add-comment-form" method="POST"
     action="/showcases/<%= showcase._id %>/comments">
     <textarea name="content"></textarea>
-    <input type="submit" value="Add Comment">
+    <input id="add-comment" type="submit" value="Add Comment">
     </form>
 
     <% if (showcase.comments.length) { %>
@@ -33,7 +33,7 @@
                 <td>
                     <% if (showcase.user.equals(user._id)) { %>
                     <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                    <button id="delete" type="submit">X</button>
+                    <button class="x-button" id="delete" type="submit">X</button>
                     </form>
                     <form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
                         <input name="text" value="<%= comment.text %>">

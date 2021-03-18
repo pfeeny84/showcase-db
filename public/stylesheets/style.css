@@ -21,7 +21,7 @@ body > nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px 0 30px;
+  padding: 5px 20px 5px 30px;
  
 }
 body > main {
@@ -52,7 +52,7 @@ nav > a:hover {
 
 
 table {
-  font-size: 20px;
+  font-size: 40px;
 }
 
 table thead th {
@@ -81,59 +81,95 @@ table td {
 #landing-text {
   text-align:center;
   font-family: "Permanent Marker";
+  font-size: 40px;
   color:darkred;
   border: solid 3px black;
   width: auto;
-  padding:3px;
+  padding:10px;
+  margin-bottom:50px;
   background-color: rgba(215, 164, 164, 0.477);
 
 }
 
-.navbar{
+.navbar {
   background-color: rgba(205, 178, 178, 0.834);
 }
 
-.navbar-brand{
+.navbar-brand {
   font-family: "Permanent Marker";
   color:rgb(0, 0, 0);
-  font-size: 3em
+  font-size: 3em;
+  
 }
-#show-logo{
+#show-logo {
   font-family: "Permanent Marker";
+  text-decoration: underline darkred;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+#list-head {
+  font-family: "Permanent Marker";
+  text-align: center;
+  color:darkred;
+
+}
+
+#list-body {
+  font-family: "Permanent Marker";
+}
+
+#details {
+  font-family: "Permanent Marker";
+  font-size: 40px;
   text-align: center;
 }
 
-#list-head{
+.active {
   font-family: "Permanent Marker";
-}
-
-#list-body{
-  font-family: "Permanent Marker";
-}
-
-#details{
-  font-family: "Permanent Marker";
-  text-align: center;
-}
-
-.active{
-  font-family: "Permanent Marker";
+  font-size: 30px;
   text-align: center;
  
 }
 
-#new-showcase{
+#new-showcase {
   font-family: "Permanent Marker";
+  font-size: 28px;
   margin: auto;
-  padding:8px
+  padding:8px;
+  
 }
 
-#delete{
+#delete {
   display: block;
   
 }
 
-.detail{
+.detail {
   color: darkred;
+  font-size: 45px;
+}
+
+#details-head {
+  font-size: 50px;
+  text-decoration: underline;
+}
+
+#delete-head {
+  font-size: 30px;
+}
+
+.x-button {
+  padding: 10px;
+  color:darkred
+}
+
+#update {
+  padding: 10px;
+}
+
+#add-comment {
+  padding: 10px;
 }
 
