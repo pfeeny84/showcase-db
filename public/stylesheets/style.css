@@ -35,11 +35,12 @@ nav > a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
+  color:black;
 }
 
 nav > a:hover {
-  color: white;
-  background-color: #424748;
+  color: rgb(0, 0, 0);
+  background-color: #000000;
 }
 
 
@@ -78,6 +79,17 @@ table td {
   border: solid 3px black;
   width: auto;
   padding:3px;
-  background-color: rgb(222, 194, 194);
+  background-color: rgba(215, 164, 164, 0.477);
 
 }
+
+.navbar{
+  background-color: rgba(142, 51, 51, 0.834);
+}
+
+.navbar-brand{
+  font-family: "Permanent Marker";
+  color:rgba(0, 0, 0, 0);
+  font-size: 3em
+}
+
