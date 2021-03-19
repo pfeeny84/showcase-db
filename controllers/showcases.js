@@ -12,9 +12,7 @@ module.exports = {
 }
 
 function deleteShowcase(req,res) {
-    // console.log(req.params.id, 'this is id')
     Showcase.findByIdAndDelete(req.params.id, function(err, deletedDoc){
-        // console.log(deletedDoc, 'this is deleted doc')
         res.redirect('/showcases');
 
     });
